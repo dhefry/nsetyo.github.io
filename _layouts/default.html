@@ -3,13 +3,14 @@
   {% include head.html %}
   <body>
     <div class="container">
-      {% include header.html %}
+      <aside id="sidebar-wrapper">
+        {% include sidebar.html %}
+      </aside>      
+      <section class="page-content posts">
+        {{ content }}
+      </section>
       
-      <div class="page-content">
-        <div class="wrapper"> {{ content }} </div>
-      </div>
-      
-      {% include footer.html %}
+      <!-- {% include footer.html %} -->
     </div>
     <script src="js/jquery/jquery-2.2.0.min.js"></script>
     <!-- bootstrap -->
