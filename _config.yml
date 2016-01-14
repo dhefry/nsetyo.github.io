@@ -9,15 +9,15 @@
 title: blog.nsetyo.net
 email: nsetyo.mail@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Blog pribadi tentang Komputer, Programming, dan Linux.
+
 baseurl: "" # the subpath of your site, e.g. /blog
-# url: "http://localhost:4000" # the base hostname & protocol for your site
-url: https://blog.nsetyo.net   # with the https protocol
-enforce_ssl: blog.nsetyo.net   # without any protocol
-twitter_username: nsetyo
-github_username:  nsetyo
+url: https://nsetyo.web.id   # with the https protocol
+enforce_ssl: nsetyo.web.id   # without any protocol
+
+facebook_username: nsetyo
+github_username:   nsetyo
+twitter_username:  nsetyo
 
 # Build settings
 markdown: kramdown
