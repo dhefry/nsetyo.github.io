@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+  {% include head.html %}
+  <body>
+    <div class="container">
+      <aside id="sidebar-wrapper">
+        {% include sidebar.html %}
+      </aside>      
+      <section class="page-content posts">
+        {{ content }}
+      </section>
+      
+      <!-- {% include footer.html %} -->
+    </div>
+    <script src="js/jquery/jquery-2.2.0.min.js"></script>
+    <script src="dist/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
