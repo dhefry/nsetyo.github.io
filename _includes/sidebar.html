@@ -1,49 +1,40 @@
-<div class="avatar"> 
-  <div class="avatar-image"></div>
-</div>
+<div class="avatar"> <div class="avatar-image"></div> </div>
 
 <div class="sidebar">
-  <div id="sidebar-verticalnav" class="btn-group btn-group-justified" role="group" >
-    <a class="btn btn-info" href="#" title="{{ site.title }}"><i class="fa fa-home"></i></a>
-    <a class="btn btn-info" href="#"><i class="fa fa-facebook"></i></a>
-    <a class="btn btn-info" href="#"><i class="fa fa-twitter"></i></a>
-    <a class="btn btn-info" href="#"><i class="fa fa-github"></i></a>
+  I am a
+  <div id="word-list">
+    <span class="muncul">web developer,</span>
+    <span class="hilang">pasionate linux user,</span>
+    <span class="hilang">computer enthusiast,</span>
   </div>
-<!-- 
-    <a class="btn btn-block btn-default" href="http://127.0.0.1:4000/about/">FAQ</a>
-    <a class="btn btn-block btn-default" href="http://127.0.0.1:4000/about/">Linux</a>
-    <a class="btn btn-block btn-default" href="http://127.0.0.1:4000/about/">Python</a>
-    <a class="btn btn-block btn-default" href="http://127.0.0.1:4000/about/">MORE</a> -->
-    <ul class="tag-box inline">
-{% assign tags_list = site.categories %}  
-  {% if tags_list.first[0] == null %}
-    {% for tag in tags_list %} 
-      <li><a href="#{{ tag }}">{{ tag | capitalize }} <span>{{ site.tags[tag].size }}</span></a></li>
-    {% endfor %}
-  {% else %}
-    {% for tag in tags_list %} 
-      <li><a href="#{{ tag[0] }}">{{ tag[0] | capitalize }} <span>{{ tag[1].size }}</span></a></li>
-    {% endfor %}
-  {% endif %}
-{% assign tags_list = nil %}
-</ul>
+  <script type="text/javascript">
 
-{% for tag in site.categories %} 
-  <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
-  <ul class="post-list">
-    {% assign pages_list = tag[1] %}  
-    {% for post in pages_list %}
-      {% if post.title != null %}
-      {% if group == null or group == post.group %}
-      <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></a></li>
-      {% endif %}
-      {% endif %}
-    {% endfor %}
-    {% assign pages_list = nil %}
-    {% assign group = nil %}
-  </ul>
-{% endfor %}
-       <!--  <div class="rss">
-                <a href="http://127.0.0.1:4000/feed.xml"><i class="icon-rss icon-large"></i>  RSS</a>
-        </div> -->
+    (function(){
+        document.addEventListener('DOMContentLoaded', function(){
+            var children = document.getElementById('word-list').children;
+            var length = children.length;
+            var idx = 0;
+            setInterval(function(){
+                children[idx].className = "hilang";
+                idx = (idx + 1) % length;
+                children[idx].className = "muncul";
+            }, 3000);
+        });
+    })();
+  </script>
+  
+  <p class="no-margin">follow me: </p>
+  <div class="btn-group btn-group-justified social-btn" role="group" >
+    <a class="btn btn-info" href="/" title="{{ site.title }}">
+      <i class="fa fa-home"></i></a>
+    <a class="btn btn-info" href="http://facebook.com/{{ site.facebook_username }}" title="Facebook">
+      <i class="fa fa-facebook-official"></i> </a>
+    <a class="btn btn-info" href="http://twitter.com/{{ site.twitter_username }}" title="Twitter">
+      <i class="fa fa-twitter"></i></a>
+    <a class="btn btn-info" href="http://github.com/nsetyo" title="GitHub">
+      <i class="fa fa-github"></i></a>
+    <a class="btn btn-info" href="http://github.com/nsetyo" title="Mail me">
+      <i class="fa fa-envelope"></i></a>
+  </div>
+  <!-- <a href="http://127.0.0.1:4000/feed.xml"><i class="icon-rss icon-large"></i>  RSS</a> </div> -->
 </div>
