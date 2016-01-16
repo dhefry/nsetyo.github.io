@@ -183,8 +183,12 @@ a, a:hover { text-decoration: none; }
   padding-left  : $spacing-unit;
   padding-right : $spacing-unit;
 }
+.post .post-content { padding-bottom: $spacing-unit }
 
+.post .post-content .list.taglist    { margin-left: 0; }
 .post .post-content .list.taglist li { padding: 2px 0; }
+
+.post .post-content > * { overflow-x: hidden; }
 
 .post .post-header { padding: $spacing-unit $spacing-unit 0 $spacing-unit; }
 
@@ -199,7 +203,8 @@ a, a:hover { text-decoration: none; }
 
 .post .post-title a:hover { color: $mint-color-dark; }
 
-.post .post-meta {
+.post .post-meta,
+.post .post-meta .tag {
   color       : $mediumgrey-color-dark;
   font-size   : $small-font-size;
 }
