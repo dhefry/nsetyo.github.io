@@ -28,7 +28,7 @@ layout: default
         {% for tag in post.tags %}
           <!-- <span class="label label-default">{{ tag }}</span> -->
           <a class="tag text-muted" href="{{ page.url | append:'#'}}{{ tag | slugify }}" style="margin-right: 3px">
-            #{{ tag }}
+            <small>#{{ tag }}</small>
           </a> 
         {% endfor %} 
       </div>
