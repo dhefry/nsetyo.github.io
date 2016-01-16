@@ -1,23 +1,21 @@
 ---
 layout: home
 ---
-
-  {% for post in site.posts %}
-  <article class="post">
-    <div class="post-header">
-      <h2 class="post-title">
-        <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
-    </div>
-    <div class="post-content">
-      <p>{{ post.excerpt }}</p>    
-    </div>
+{% for post in paginator.posts %}
+<article class="post panel">
+  <div class="post-header">
+    <h2 class="post-title">
+      <a class="" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+  </div>
+  <div class="post-content"> <p>{{ post.excerpt }}</p> </div>
+  <div class="post-footer panel-footer">
     <div class="post-meta">
       <span class="post-date">
         <i class="fa fa-calendar"> </i> {{ post.date | date: '%d %B, %Y'}}
       </span>
     </div>
-    <!-- <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
-  </article>
-  {% endfor %}
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  </div>
+  <!-- <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
+</article>
+{% endfor %}
