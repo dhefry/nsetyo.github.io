@@ -7,21 +7,6 @@ description : 'Blog pribadi tentang Komputer, Programming, dan Linux.'
 url         :  https://nsetyo.web.id  # with the https protocol
 enforce_ssl :  nsetyo.web.id          # without any protocol
 
-# Default settings
-default :
-  -
-    scope:
-      path   : "" # an empty string here means all files in the project
-      type   : "posts"
-    values:
-      layout : "posts"
-  -
-    scope:
-      path   : "" # an empty string here means all files in the project
-      type   : "pages"
-    values:
-      layout : "pages"
-
 # Author
 author:
   name         : nsetyo
