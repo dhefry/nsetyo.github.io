@@ -6,13 +6,14 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: blog.nsetyo.net
+title: nsetyo.web.id
 email: nsetyo.mail@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Blog pribadi tentang Komputer, Programming, dan Linux.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://nsetyo.web.id   # with the https protocol
+# url: http://localhost:4000   # with the https protocol
+url: https://nsetyo.web.id # with the https protocol
 enforce_ssl: nsetyo.web.id   # without any protocol
 
 facebook_username: nsetyo
@@ -21,3 +22,4 @@ twitter_username:  nsetyo
 
 # Build settings
 markdown: kramdown
+paginate: 5
