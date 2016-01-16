@@ -9,11 +9,11 @@
  *  Typography
  * ----------------------------------------
  */ 
-$base-font-family: "Roboto", Helvetica, Arial, sans-serif;
-$base-font-size:   15px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.75;
-$base-line-height: 1.5;
+$base-font-family : "Roboto", Helvetica, Arial, sans-serif;
+$base-font-size   : 15px;
+$base-font-weight : 400;
+$small-font-size  : $base-font-size * 0.75;
+$base-line-height : 1.5;
 
 
 /* ----------------------------------------
@@ -44,27 +44,26 @@ $mediumgrey-color-dark : #aab2bd;
 $darkgrey-color        : #656d78;
 $darkgrey-color-dark   : #434a54;
 
+$grey-color            : #828282;
+$grey-color-light      : lighten($grey-color, 25%);
+$grey-color-dark       : darken($grey-color, 25%);
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-$text-color:       #3a3a3a;
-$background-color: #dedede;
-$brand-color:      #2a7ae2;
+$text-color            : #3a3a3a;
+$background-color      : #dedede;
+$brand-color           : #2a7ae2;
 
 /* ----------------------------------------
  *  Layouts width
  * ----------------------------------------
  */
-$container-width:  800px;
-$on-palm:          600px;
-$on-laptop:        800px;
+$avatar-size     : 140px;
+$spacing-unit    :  20px;
+$sidebar-width   : 270px;
+$content-width   : 560px;
+$container-width : $content-width+$sidebar-width+30px;
+$on-palm         : 600px;
+$on-laptop       : 800px;
 
-$sidebar-width:    240px;
-$content-width:    540px;
-
-$spacing-unit:     30px;
 
 /* ---------------------------------------------------------------------------------------------- */
 
@@ -74,56 +73,46 @@ $spacing-unit:     30px;
  * ----------------------------------------
  */
 body {
-  background: $background-color url("../img/congruent_pentagon.png") repeat fixed;
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
+  background : $background-color url("../img/congruent_pentagon.png") repeat fixed;
+  font       : $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color      : $text-color;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-}
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm { margin-bottom: $spacing-unit / 2; }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-weight: 500; }
+
+.h1, h1 { font-size: 36px }
+.h2, h2 { font-size: 30px }
+.h3, h3 { font-size: 24px }
+.h4, h4 { font-size: 18px }
+.h5, h5 { font-size: 14px }
+.h6, h6 { font-size: 12px }
 
 a, a:hover { text-decoration: none; }
 
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
-}
-
 .no-margin { margin: 0}
 
-.container {
-    margin: 0 auto;
-    width: $container-width;
-}
+.container { width  : $container-width; }
 
 #sidebar-wrapper {
-  margin-left: $content-width;
-  margin-top: 30px;
-  position: fixed;
-  width: $sidebar-width;
+  margin-left : $content-width;
+  margin-top  : $spacing-unit;
+  position    : fixed;
+  width       : $sidebar-width;
 }
 
 #sidebar-wrapper .sidebar {
-  background: #fff none repeat scroll 0% 0%;
-  border-radius: 5px;
-  border: 1px solid #eee;
-  box-shadow: 0px 0px 2px 0px rgba(178, 178, 178, 0.74);
-  margin-top: 90px;
-  padding: 70px 15px 15px;
-  text-align: left;
-  word-wrap: break-word;
-  z-index: 888;
+  margin-top  : 90px;
+  padding     : $spacing-unit;
+  padding-top : 60px;
+  text-align  : left;
+  word-wrap   : break-word;
+  z-index     : 888;
 }
 
-.sidebar .btn-group.social-btn {
-  margin: 2px 0 10px 0;
-}
+.sidebar .btn-group.social-btn { margin: 2px 0 10px 0; }
 
 .sidebar .btn-group.social-btn .btn {
   font-size: 22px;
@@ -131,94 +120,102 @@ ul, ol, dl, figure,
 }
 
 #word-list {
-    width: 10em;
-    position: relative;
-    vertical-align: top;
-    display: inline-block;
+  width: 10em;
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
 }
 
 #word-list span {
-    font-weight: normal;
-    position: absolute;
-    left: 0;
-    top:.3em;
-    display: inline-block;
-    opacity: 0;
-    transition: all 0.2s ease-out;
+  font-weight : normal;
+  position    : absolute;
+  left        : 0;
+  top         :.3em;
+  display     : inline-block;
+  opacity     : 0;
+  transition  : all 0.2s ease-out;
 }
 
 #word-list span.hilang {
-    animation: slide-out 0.6s;
-    -webkit-animation: slide-out 0.6s;
+    -webkit-animation : slide-out 0.6s;
+            animation : slide-out 0.6s;
 }
 
 #word-list span.muncul {
-    opacity: 1;
-    top:0;
-    animation: slide-in 0.6s;
-    -webkit-animation: slide-in 0.6s;
+  opacity           : 1;
+  top               : 0;
+  -webkit-animation : slide-in 0.6s;
+          animation : slide-in 0.6s;
 }
 
 .avatar {
-  border: 1px solid #eee;
-  background: #fff none repeat scroll 0% 0%;
-  right: 50px;
-  position: absolute;
-  z-index: 999;
-  display: block;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  padding: 4px;
+  background : #fff none repeat scroll 0% 0%;
+  border     : 1px solid #eee;
+  
+  margin     : 0 auto;
+  position   : absolute;
+  left       : 0;
+  right      : 0;
+  z-index    : 999;
+  
+  height     : $avatar-size;
+  padding    : 4px;
+  width      : $avatar-size;
 }
 
 .avatar-image {
-  background-image: url("../img/avatar.png");
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-  border-radius: 50%;
+  background-image    : url("../img/avatar.png");
+  background-position : center center;
+  background-size     : cover;
+  display             : block;
+  height              : 100%;
 }
 
 .page-content {
-    padding: 5px;
-    width: $content-width;
+  margin-bottom : $spacing-unit;
+  width         : $content-width - $spacing-unit;;
 }
 
-.page-content .post {
-  background-color: #fafafa;
-  border-radius: 5px;
-  box-shadow: 0px 0px 4px 0px rgba(178, 178, 178, 0.74);
-  margin-top: 30px;
-  margin-right: 20px;
-}
+.page-content .post { margin-top: $spacing-unit; }
 
 .post .post-content,
 .post .post-header {
-  padding: 0 15px;
+  padding-left  : $spacing-unit;
+  padding-right : $spacing-unit;
 }
+
+.post .post-content .list.taglist li { padding: 2px 0; }
+
+.post .post-header { padding: $spacing-unit $spacing-unit 0 $spacing-unit; }
 
 .post .post-title {
+  border-bottom: 1px solid $mediumgrey-color;
   font-size: 32px;
-  margin: 0;
-  padding-top: 15px;
+  margin: 0 0 5px 0;
+  padding-bottom: 5px;
 }
 
-.post .post-title a {       color: $mint-color; }
+.post .post-title a { color: $mint-color; }
 
-.post .post-title a:hover { 
-  color: $mint-color-dark; 
-  text-decoration: none;
-}
+.post .post-title a:hover { color: $mint-color-dark; }
 
 .post .post-meta {
-  background: #F6F6F6 none repeat scroll 0% 0%;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top: 1px solid #e1e1e1;
-  color: #b1b1b1;
-  font-size: $small-font-size;
-  padding: 7px 15px;
+  color       : $mediumgrey-color-dark;
+  font-size   : $small-font-size;
+}
+
+
+.post .post-footer {
+  background : #F6F6F6 none repeat scroll 0% 0%;
+  border-top : 1px solid #e1e1e1;
+  color      : $mediumgrey-color-dark;
+  font-size  : $small-font-size;
+  min-height : $spacing-unit;
+}
+
+.post .tag .label {
+  font-weight: normal;
+  padding: 0.1em 0.6em;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
