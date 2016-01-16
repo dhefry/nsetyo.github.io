@@ -1,25 +1,22 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Build Dependency
+gems        : ['jekyll-paginate']
 
 # Site settings
-title: nsetyo.web.id
-email: nsetyo.mail@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Blog pribadi tentang Komputer, Programming, dan Linux.
+title       :  nsetyo.web.id
+description : 'Blog pribadi tentang Komputer, Programming, dan Linux.'
+url         :  https://nsetyo.web.id  # with the https protocol
+enforce_ssl :  nsetyo.web.id          # without any protocol
 
-baseurl: "" # the subpath of your site, e.g. /blog
-# url: http://localhost:4000   # with the https protocol
-url: https://nsetyo.web.id # with the https protocol
-enforce_ssl: nsetyo.web.id   # without any protocol
-
-facebook_username: nsetyo
-github_username:   nsetyo
-twitter_username:  nsetyo
+# Author
+author:
+  name         : nsetyo
+  email        : nsetyo.mail@gmail.com
+  url          : http://nsetyo.web.id
+  facebook     : http://facebook.com/nsetyo
+  github       : http://github.com/nsetyo
+  twitter      : http://twitter.com/nsetyo
 
 # Build settings
-markdown: kramdown
-paginate: 5
+markdown : kramdown
+paginate : 5
+
