@@ -12,10 +12,8 @@ layout: default
         {{ post.date | date: '%d %B, %Y'}} 
       </time>
       <span class="post-author">
-        {% if post.author %}
-          oleh: {{ post.author }}
-        {% elsif site.author.name %}
-          oleh: {{ site.author.name }}
+        {% if post.author %} oleh: {{ post.author }}
+        {% elsif site.author.name %} oleh: {{ site.author.name }}
         {% endif %}
       </span>
     </div>
@@ -41,3 +39,50 @@ layout: default
   <!-- <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> -->
 </article>
 {% endfor %}
+
+<ul class="pagination">
+  {% if paginator.previous_page %}
+    <li> <a href="/" title="Halaman Pertama">&laquo;</a> </li>
+    {% if paginator.previous_page > 2 %}
+      <li class="disabled" > <a >...</a> </li>
+    {% endif %}
+    {% if paginator.previous_page > 1 %}
+      <li> 
+        <a href="/page/{{paginator.previous_page | minus:1}}" title="Halaman {{paginator.previous_page | minus:1}}">
+          {{paginator.previous_page | minus:1}}
+        </a>
+      </li>
+    {% endif %}
+      <li> 
+        <a href="/page/{{paginator.previous_page}}" title="Halaman {{paginator.previous_page}}">
+          {{paginator.previous_page}}
+        </a>
+      </li>
+  {% else %}
+    <li class="disabled"> <a title="Halaman Pertama">&laquo;</a> </li>
+  {% endif %}
+
+  <li class="active"> <a title="Halaman saat ini"> {{paginator.page}} </a> </li>
+
+  {% if paginator.next_page %}
+    <li> 
+      <a href="/page/{{paginator.next_page}}" title="Halaman {{paginator.next_page}}">
+        {{paginator.next_page}}
+      </a>
+    </li>
+    {% if paginator.next_page != paginator.total_pages %}
+      <li> 
+        <a href="/page/{{paginator.next_page | plus:1}}" title="Halaman {{paginator.next_page | plus:1 }}">
+          {{paginator.next_page | plus:1}}
+        </a>
+      </li>
+    {% endif %}
+    {% assign next_two = paginator.next_page | plus:1 %}
+    {% if paginator.total_pages > next_two %} <li class="disabled" > <a>...</a> </li> {% endif %}
+    <li> <a href="/page/{{paginator.total_pages}}" title="Halaman Terakhir">&raquo;</a> </li>
+    
+  {% else %}
+    <li class="disabled" title="Halaman Terakhir"> <a >&raquo;</a> </li>
+  {% endif %}
+
+</ul>

@@ -94,6 +94,9 @@ a, a:hover { text-decoration: none; }
 
 .container { width  : $container-width; }
 
+:focus, a:focus, button:focus {outline:none !important;}
+::-moz-focus-inner {border:0 !important;}
+
 /* ----------------------------------------
  *  Sidebar settings
  * ----------------------------------------
@@ -165,7 +168,7 @@ a, a:hover { text-decoration: none; }
 
 .sidebar .btn-group.social-btn {   margin: 2px 0 10px 0; }
 .sidebar .btn-group.social-btn .btn {  padding: 4px 8px; }
-.sidebar .btn-group.social-btn .btn i { font-size: 20px; }
+.sidebar .btn-group.social-btn .btn i { font-size: 22px; }
 
 /* ----------------------------------------
  *  Content
@@ -175,6 +178,8 @@ a, a:hover { text-decoration: none; }
   margin-top: $spacing-unit;
   width : $content-width - $spacing-unit; 
 }
+
+.page-content .pagination { margin-top: 0;}
 
 .post .post-content,
 .post .post-header {
@@ -215,6 +220,43 @@ a, a:hover { text-decoration: none; }
 .post .tag .label {
   font-weight: normal;
   padding: 0.1em 0.6em;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: $mint-color;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  color: #fff;
+  background-color: lighten($mint-color, 10%);
+  border-color: $mint-color;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777;
+  background-color: #fff;
+  border-color: #ddd;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
