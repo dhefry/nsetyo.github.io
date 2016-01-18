@@ -2,11 +2,15 @@
 gems        : 
   - jekyll-paginate
   - jemoji
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Site settings
 title       :  nsetyo.web.id
 description : 'Blog pribadi tentang Komputer, Programming, dan Linux.'
-url         :  https://nsetyo.web.id  # with the https protocol
+url         :  http://localhost:4000  # with the https protocol
+# url         :  https://nsetyo.web.id  # with the https protocol
 enforce_ssl :  nsetyo.web.id          # without any protocol
 
 # Author
