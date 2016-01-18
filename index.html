@@ -18,7 +18,10 @@ layout: default
       </span>
     </div>
   </div>
-  <div class="post-content panel-body"> {{ post.excerpt }} </div>
+  <div class="post-content panel-body"> 
+    {{ post.content | split:"<!--more-->" | first }}
+    ... <a href="{{ post.url | prepend: site.baseurl }}" title="Baca selengkapnya">Baca selengkapnya</a>
+  </div>
   <div class="post-footer panel-footer">
     <div class="post-meta row">
       <div class="post-tags col-md-8">
