@@ -13,8 +13,7 @@
   <link rel="canonical"  href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate"  href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" type="application/rss+xml" title="{{ site.title }}"  >
   <script>
-    if (window.location.protocol != "https:")
-    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+    if (window.location.protocol != "https:") window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
   </script>
   <!-- Google font  -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
@@ -24,4 +23,5 @@
   <link rel="stylesheet" href="css/main.css">
   
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% seo %}
 </head>
