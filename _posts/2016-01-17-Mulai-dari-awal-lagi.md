@@ -17,4 +17,4 @@ lepas dari ikatannya.
 
 Berbeda dari blog sebelumnya, blog yang sekarang ini nggak lagi pakai 
 [wordpress](https://wordpress.org/), blog ini menggunakan jekyll yang di host 
-pada github untuk dijalankan sebagai github-pages. Jekyll lebih sederhana :+1:
+pada github untuk dijalankan sebagai github-pages.
