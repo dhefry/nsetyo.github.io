@@ -19,8 +19,11 @@ layout: default
     </div>
   </div>
   <div class="post-content panel-body"> 
+    {% assign trimsize = post.content | split:"<!--more-->" | size  %}
     {{ post.content | split:"<!--more-->" | first }}
+    {% if trimsize > 1 %}
     ... <a href="{{ post.url | prepend: site.baseurl }}" title="Baca selengkapnya">Baca selengkapnya</a>
+    {% endif %}
   </div>
   <div class="post-footer panel-footer">
     <div class="post-meta row">

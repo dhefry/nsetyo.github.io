@@ -15,7 +15,8 @@ enforce_ssl :  nsetyo.web.id          # without any protocol
 
 # Author
 author:
-  name         : nsetyo
+  name         : Setyo Nugroho
+  username     : nsetyo
   email        : nsetyo.mail@gmail.com
   url          : http://nsetyo.web.id
   facebook     : http://facebook.com/nsetyo
@@ -29,7 +30,6 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "post"
-      excerpt_separator: "<!--more-->"
 
 # Build settings
 markdown : kramdown

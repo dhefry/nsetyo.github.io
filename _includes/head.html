@@ -1,5 +1,5 @@
 <head>
-  <base href="{{ "/" | prepend: site.url | remove_first:'http:' | remove_first:'https:' }}"></base>
+  {% assign base_url = site.url | remove_first:'http:' | remove_first:'https:' %}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +11,17 @@
     {% endif %}">
   
   <link rel="canonical"  href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate"  href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" type="application/rss+xml" title="{{ site.title }}"  >
+  <link rel="alternate"  href="{{ base_url}}/feed.xml" type="application/rss+xml" title="{{ site.title }}"  >
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url}}/img/nflat3.png">
   <script>
     // if (window.location.protocol != "https:") window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
   </script>
   <!-- Google font  -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
   <!-- bootstrap & fontawesome -->
-  <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  
+  <link rel="stylesheet" href="{{ base_url}}/dist/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ base_url}}/dist/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ base_url}}/dist/bootstrap/css/bootstrap-social.css">
+  <link rel="stylesheet" href="{{ base_url}}/css/main.css">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>

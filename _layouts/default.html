@@ -2,18 +2,49 @@
 <html lang="id">
   {% include head.html %}
   <body>
+    <div id="fb-root"></div>
     <div class="container">
-      <aside id="sidebar-wrapper">
-        {% include sidebar.html %}
-      </aside>      
-      <section class="page-content posts">
+      <nav class="navbar navbar-default navbar-fixed-top" id="main-header" >
+          {% include header.html %}
+      </nav> 
+      <section class="page-content posts" id="main-content" >
         {{ content }}
       
         {% include footer.html %}
       </section>
     </div>
-    <script src="js/jquery/jquery-2.2.0.min.js"></script>
-    <script src="dist/bootstrap/js/bootstrap.min.js"></script>    
+    <script src="{{ base_url}}/js/jquery/jquery-2.2.0.min.js"></script>
+    <script src="{{ base_url}}/dist/bootstrap/js/bootstrap.min.js"></script>    
     <script id="dsq-count-scr" src="//nsetyo-git.disqus.com/count.js" async></script>
+    <script >
+      $(document).ready(function () {
+          var header = $("#main-header"),
+              navr   = $("#right-nav");
+          
+          if($(document).scrollTop() > 0 ) {
+              header.addClass('scrolled');
+              navr.show();  
+          };
+
+          $(window).scroll(function () {
+              if ($(window).scrollTop() > 0.15) {
+                header.addClass('scrolled');
+                navr.show();
+              } else {
+                header.removeClass('scrolled');
+                navr.hide();
+              }
+          });
+      });
+    </script>
+    <script>
+      $('.to-top').each(function(){
+          $(this).click(function(){ 
+              $('html,body').animate({ scrollTop: 0 }, 'slow');
+              return false; 
+          });
+      });
+    </script>
+
   </body>
 </html>
