@@ -23,7 +23,7 @@ layout: default
     {{ post.content | split:"<!--more-->" | first }}
     {% if trimsize > 1 %}
     <p>
-    ... <a href="{{ post.url | prepend: site.baseurl }}" title="Baca selengkapnya">Baca selengkapnya</a>
+    <a href="{{ post.url | prepend: site.baseurl }}" title="Baca selengkapnya">Baca selengkapnya</a> ...
     </p>
     {% endif %}
   </div>
