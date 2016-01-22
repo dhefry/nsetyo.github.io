@@ -34,4 +34,6 @@ defaults:
 markdown : kramdown
 paginate : 5
 paginate_path: "/page/:num/"
+emoji:
+  src: "/img/google-emoji"
 
