@@ -239,7 +239,44 @@ body {
   }
 }
 
+/* ----------------------------------------
+ *  Pagination
+ * ----------------------------------------
+ */
 
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #23527c;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  background-color : lighten($link-color, 10%);
+  border-color     : $link-color;
+  color            : $text-color;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: $color-darkgrey;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: $color-mint;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
 
 /* ----------------------------------------
  *  Content
@@ -299,47 +336,24 @@ body {
   padding    : $spacing-unit/2 $spacing-unit;
 }
 
+.post .btn-social-icon {
+  border: 1px solid transparent ;
+  border-radius:0;
+}
+
 .post .tag .label {
   font-weight: normal;
   padding: 0.1em 0.6em;
 }
 
-.pagination > li > a,
-.pagination > li > span {
-  color: $color-mint;
-  background-color: #fff;
-  border: 1px solid #ddd;
+// CLI
+.post .cli-command {
+  background-color: #222;
+  border: 1px solid #000;
+  color: $color-lightgrey;
 }
 
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
-  color: #23527c;
-  background-color: #eee;
-  border-color: #ddd;
-}
-
-.pagination > .active > a,
-.pagination > .active > a:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span,
-.pagination > .active > span:hover,
-.pagination > .active > span:focus {
-  background-color : lighten($link-color, 10%);
-  border-color     : $link-color;
-  color            : $text-color;
-}
-.pagination > .disabled > span,
-.pagination > .disabled > span:hover,
-.pagination > .disabled > span:focus,
-.pagination > .disabled > a,
-.pagination > .disabled > a:hover,
-.pagination > .disabled > a:focus {
-  color: #777;
-  background-color: #fff;
-  border-color: #ddd;
-}
+.cli-command .cli-env { color: $color-grass; }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "syntax-highlighting";
