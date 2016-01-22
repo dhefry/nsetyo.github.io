@@ -7,26 +7,26 @@ gems        :
   - jekyll-seo-tag
 
 # Site settings
-title       :  nsetyo.web.id
-description : 'Blog pribadi tentang Komputer, Programming, dan Linux.'
-url         :  https://nsetyo.web.id  # with the https protocol
-enforce_ssl :  nsetyo.web.id          # without any protocol
+title       : "nsetyo.web.id"
+description : "Blog pribadi tentang Komputer, Programming, dan Linux."
+url         : "https://nsetyo.web.id"  # with the https protocol
+enforce_ssl : "nsetyo.web.id"          # without any protocol
 
 # Author
 author:
-  name         : Setyo Nugroho
-  username     : nsetyo
-  email        : nsetyo.mail@gmail.com
-  url          : http://nsetyo.web.id
-  facebook     : http://facebook.com/nsetyo
-  github       : http://github.com/nsetyo
-  twitter      : http://twitter.com/nsetyo
+  name         : "Setyo Nugroho"
+  username     : "nsetyo"
+  email        : "nsetyo.mail@gmail.com"
+  url          : "http://nsetyo.web.id"
+  facebook     : "http://facebook.com/nsetyo"
+  github       : "http://github.com/nsetyo"
+  twitter      : "http://twitter.com/nsetyo"
 
 # Default
 defaults:
   -
-    scope:
-      path: "" # an empty string here means all files in the project
+    scope :
+      path  : "" # an empty string here means all files in the project
     values:
       layout: "post"
 
