@@ -31,7 +31,7 @@ defaults:
       layout: "post"
 
 # Build settings
-markdown : kramdown
+markdown : "kramdown"
 paginate : 5
 paginate_path: "/page/:num/"
 emoji:
