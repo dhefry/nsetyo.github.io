@@ -72,7 +72,7 @@ Untuk menghapus pengaturan proxy yang sudah dibuat sebelumnya, dapat menjalankan
 perintah:
 <pre class="cli-command">
 <span class="cli-env">~$</span> export HTTP_PROXY=""
-<span class="cli-env">~$</span> git config --global --unset core.gitproxy
+<span class="cli-env">~$</span> git config --global --unset http.proxy
 </pre>
 Berikutnya hapus dokumen `~/.ssh/config`. Apabila berencana menggunakan proxy lagi
 sebaiknya dokumen ini di-_backup_ terlebih dahulu dan dikembalikan lagi apabila
